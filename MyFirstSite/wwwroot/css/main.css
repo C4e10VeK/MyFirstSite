@@ -1,0 +1,279 @@
+﻿*,*:before, *:after{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    font-family: sans-serif, Arial;
+}
+.wrapper{
+    
+}
+
+/* Desktop navbar */
+
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+
+.header:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #212121;
+    box-shadow: 0 4px 16px #000;
+    z-index: 2;
+}
+
+.header-container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.header-body{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+}
+.header-list{
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+
+.header-list li{
+    list-style: none;
+    margin: 0 0 0 20px;
+}
+
+.header-link{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.header-link:hover{
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 20px;
+    background-color: #820808;
+}
+
+.site-logo{
+    flex: 0 0 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+}
+
+.site-logo img{
+    max-width: 100%;
+    display: block;
+}
+
+/* Mobile navbar */
+
+@media (max-width: 1367px) {
+    .header-body{
+        height: 60px;
+    }
+    
+    .site-logo{
+        flex: 0 0 45px;
+    }
+    
+    .header_burger{
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        z-index: 3;
+    }
+    
+    .header_burger span{
+        position: absolute;
+        background-color: #fff;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        top: 9px;
+        transition: all .5s ease 0s;
+    }
+    
+    .header_burger:before, .header_burger:after{
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        left: 0;
+        transition: all .5s ease 0s;
+    }
+    
+    .header_burger:before{
+        top: 0;
+    }
+    
+    .header_burger:after{
+        bottom: 0;
+    }
+    
+    .header_burger.active:before{
+        transform: rotate(45deg);
+        top: 9px;
+    }
+
+    .header_burger.active:after{
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+    
+    .header_burger.active span{
+        transform: scale(0);
+    }
+    
+    .header-menu{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #3D3D3D;
+        padding: 75px 15px 25px 15px;
+        transition: .5s;
+    }
+    
+    .header-menu.active{
+        right: 0;
+    }
+    
+    .header-list{
+        display: block;
+    }
+    
+    .header-list li{
+        margin: 0 0 20px 0;
+    }
+    
+    .header-link{
+        text-shadow: 0 2px 16px black;
+    }
+
+    .header-link:hover{
+        padding: 0;
+        font-size: 18px;
+        color: #820808;
+        background-color: unset;
+    }
+}
+
+/* Text blog */
+
+.container-blog {
+    color: #fff;
+    padding: 90px 0 0 0;
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+    transition: .5s;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.blog{
+    position: relative;
+    margin: 5px;
+    min-width: 300px;
+    max-width: 500px;
+    max-height: none;
+}
+
+.blog:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: #212121;
+    border-radius: 10px;
+    box-shadow: 2px 4px 16px #000;
+}
+
+.row{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    position: relative;
+    z-index: 5;
+    margin: 0 auto;
+}
+
+.img-blog{
+    margin: 0 auto;
+    max-height: 400px;
+    padding: 25% 0 50% 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-blog .img_blog{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.text-blog{
+    position: relative;
+    margin: 5px auto;
+    border-top: 2px solid white;
+    padding: 2px;
+    font-size: 15px;
+}
+
+.text-blog p{
+    font-size: 14px;
+}
+
+@media (max-width: 768px){
+    .container-blog{
+        padding: 60px 0 0 0;
+        display: block;
+        flex-direction: column-reverse;
+    }
+    
+    .blog{
+        margin: 15px 0 0 0;
+        max-width: none;
+        max-height: none;
+    }
+    
+    .text-blog p{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 411px){
+    .text-blog p{
+        font-size: 16px;
+    }
+}

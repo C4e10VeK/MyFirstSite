@@ -1,0 +1,43 @@
+﻿@page
+@model SiteKustiX.Pages.Index
+
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <title>Che10VeK blog</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+</head>
+<body>
+
+<div class="container-blog">
+    <div class="blog">
+        <div class="row">
+            <div class="title-blog"><h2>Заголовок</h2></div>
+            <div class="img-blog"><img class="img_blog" src="img/Anime-Ero-Anime-Tokisaki-Kurumi-Date-a-Live-3720994.png" alt=""/></div>
+            <div class="text-blog"><p>Сам текст блока пока что пишу всякую хрень но так нужно</p></div>
+        </div>
+    </div>
+    <!-- Тут идет чтение и выгрузка данных из таблицы в виде постов -->
+    @foreach (var blogPost in Model.Postses)
+    {
+        <div class="blog">
+           <div class="row">
+               <div class="title-blog"><h2>@blogPost.Title</h2></div>
+               <div class="img-blog">
+               @if (blogPost.Img != null)
+               {
+                   <img class="img_blog" src="@blogPost.Img" alt="" />
+               }
+               else
+               {
+                   <img class="img_blog" src="img/kust.png" alt="" />
+               }
+               </div>
+               <div class="text-blog"><p>@blogPost.BlogText</p></div>
+            </div>
+        </div>   
+    }
+</div>
+</body>
+</html>
